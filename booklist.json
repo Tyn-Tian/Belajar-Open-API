@@ -59,6 +59,16 @@
               "nullable": true,
               "minLength": 1,
               "maxLength": 100
+            },
+            "examples": {
+              "Atomic Habits": {
+                "description": "Example name Atomic Habits",
+                "value": "Atomic Habits"
+              },
+              "Filosofi Teras": {
+                "description": "Example name Filosofi Teras",
+                "value": "Filosofi Teras"
+              }
             }
           }
         ],
@@ -93,6 +103,28 @@
                       "type": "string",
                       "minLength": 1
                     }
+                  }
+                }
+              },
+              "examples": {
+                "Atomic Habits": {
+                  "description": "Example create booklist Atomic Habits",
+                  "value": {
+                    "name": "Atomic Habits",
+                    "priority": 3,
+                    "genre": [
+                      "Pengembangan Diri", "Habits"
+                    ]
+                  }
+                },
+                "Filosofi Teras": {
+                  "description": "Example create booklist Filosofi Teras",
+                  "value": {
+                    "name": "Filosofi Teras",
+                    "priority": 2,
+                    "genre": [
+                      "Pengembangan Diri", "Filosofi"
+                    ]
                   }
                 }
               }
@@ -145,6 +177,28 @@
                       "type": "string",
                       "minLength": 1
                     }
+                  }
+                }
+              },
+              "examples": {
+                "Atomic Habits": {
+                  "description": "Example create booklist Atomic Habits",
+                  "value": {
+                    "name": "Atomic Habits",
+                    "priority": 3,
+                    "genre": [
+                      "Pengembangan Diri", "Habits"
+                    ]
+                  }
+                },
+                "Filosofi Teras": {
+                  "description": "Example create booklist Filosofi Teras",
+                  "value": {
+                    "name": "Filosofi Teras",
+                    "priority": 2,
+                    "genre": [
+                      "Pengembangan Diri", "Filosofi"
+                    ]
                   }
                 }
               }
