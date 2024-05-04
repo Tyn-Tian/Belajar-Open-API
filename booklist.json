@@ -23,11 +23,7 @@
         "environment": {
           "description": "Server Enviroment",
           "default": "dev",
-          "enum": [
-            "dev",
-            "qa",
-            "prod"
-          ]
+          "enum": ["dev", "qa", "prod"]
         }
       }
     }
@@ -40,33 +36,55 @@
     "/booklist": {
       "get": {
         "summary": "Get all booklist",
-        "description": "Get all unread booklist by default",
-        "responses": {
-
-        }
+        "description": "Get all incompleted booklist by default",
+        "parameters": [
+          {
+            "name": "include completed",
+            "in": "query",
+            "required": false,
+            "description": "Is include completed booklist"
+          },
+          {
+            "name": "name",
+            "in": "query",
+            "required": false,
+            "description": "filter booklist by name"
+          }
+        ],
+        "responses": {}
       },
       "post": {
         "summary": "Create new booklist",
         "description": "Create new booklist to database",
-        "responses": {
-
-        }
+        "responses": {}
       }
     },
     "/booklist/{booklistId}": {
       "put": {
         "summary": "Update existing booklist",
         "description": "Update existing booklist in database",
-        "responses": {
-
-        }
+        "parameters": [
+          {
+            "name": "booklistId",
+            "in": "path",
+            "required": true,
+            "description": "Booklist id for update"
+          }
+        ],
+        "responses": {}
       },
       "delete": {
         "summary": "Delete existing booklist",
         "description": "Delete existing booklist in database",
-        "responses": {
-          
-        }
+        "parameters": [
+          {
+            "name": "booklistId",
+            "in": "path",
+            "required": true,
+            "description": "Booklist id for deteled"
+          }
+        ],
+        "responses": {}
       }
     }
   }
