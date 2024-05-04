@@ -32,5 +32,9 @@
       }
     }
   ],
+  "externalDocs": {
+    "description": "linkedin Christian",
+    "url": "https://www.linkedin.com/in/christian72/"
+  },
   "paths": {}
 }
