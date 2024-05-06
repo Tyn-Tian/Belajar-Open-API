@@ -35,6 +35,11 @@
   "paths": {
     "/booklist": {
       "get": {
+        "security": [
+          {
+            "BooklistAuth": []
+          }
+        ],
         "tags": ["Booklist"],
         "summary": "Get all booklist",
         "description": "Get all incompleted booklist by default",
@@ -106,6 +111,11 @@
         }
       },
       "post": {
+        "security": [
+          {
+            "BooklistAuth": []
+          }
+        ],
         "tags": ["Booklist"],
         "summary": "Create new booklist",
         "description": "Create new booklist to database",
@@ -151,6 +161,11 @@
     },
     "/booklist/{booklistId}": {
       "put": {
+        "security": [
+          {
+            "BooklistAuth": []
+          }
+        ],
         "tags": ["Booklist"],
         "summary": "Update existing booklist",
         "description": "Update existing booklist in database",
@@ -195,6 +210,11 @@
         }
       },
       "delete": {
+        "security": [
+          {
+            "BooklistAuth": []
+          }
+        ],
         "tags": ["Booklist"],
         "summary": "Delete existing booklist",
         "description": "Delete existing booklist in database",
@@ -251,6 +271,14 @@
     }
   },
   "components": {
+    "securitySchemes": {
+      "BooklistAuth": {
+        "description": "Authentication for Booklist RESTful API",
+        "type": "apiKey",
+        "in": "header",
+        "name": "X-API-KEY"
+      }
+    },
     "parameters": {
       "BooklistId": {
         "name": "booklistId",
