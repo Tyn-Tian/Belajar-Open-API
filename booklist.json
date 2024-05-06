@@ -79,28 +79,7 @@
             "content": {
               "application/json": {
                 "schema": {
-                  "type": "array",
-                  "items": {
-                    "type": "object",
-                    "properties": {
-                      "id": {
-                        "type": "string"
-                      },
-                      "name": {
-                        "type": "string"
-                      },
-                      "priority": {
-                        "type": "number",
-                        "format": "int32"
-                      },
-                      "tags": {
-                        "type": "array",
-                        "items": {
-                          "type": "string"
-                        }
-                      }
-                    }
-                  }
+                  "$ref": "#/components/schemas/ArrayBooklist"
                 },
                 "examples": {
                   "success": {
@@ -135,46 +114,14 @@
           "content": {
             "application/json": {
               "schema": {
-                "type": "object",
-                "properties": {
-                  "name": {
-                    "type": "string",
-                    "minLength": 1,
-                    "required": true
-                  },
-                  "priority": {
-                    "type": "integer",
-                    "format": "int32",
-                    "default": 1,
-                    "required": true
-                  },
-                  "genre": {
-                    "type": "array",
-                    "required": false,
-                    "minItems": 1,
-                    "items": {
-                      "type": "string",
-                      "minLength": 1
-                    }
-                  }
-                }
+                "$ref": "#/components/schemas/CreateOrUpdateBooklist"
               },
               "examples": {
                 "Atomic Habits": {
-                  "description": "Example create booklist Atomic Habits",
-                  "value": {
-                    "name": "Atomic Habits",
-                    "priority": 3,
-                    "genre": ["Pengembangan Diri", "Habits"]
-                  }
+                  "$ref": "#/components/examples/Atomic Habits"
                 },
                 "Filosofi Teras": {
-                  "description": "Example create booklist Filosofi Teras",
-                  "value": {
-                    "name": "Filosofi Teras",
-                    "priority": 2,
-                    "genre": ["Pengembangan Diri", "Filosofi"]
-                  }
+                  "$ref": "#/components/examples/Filosofi Teras"
                 }
               }
             }
@@ -186,42 +133,14 @@
             "content": {
               "application/json": {
                 "schema": {
-                  "type": "object",
-                  "properties": {
-                    "id": {
-                      "type": "string"
-                    },
-                    "name": {
-                      "type": "string"
-                    },
-                    "priority": {
-                      "type": "number",
-                      "format": "int32"
-                    },
-                    "tags": {
-                      "type": "array",
-                      "items": {
-                        "type": "string"
-                      }
-                    }
-                  }
+                  "$ref": "#/components/schemas/Booklist"
                 },
                 "examples": {
                   "Atomic Habits": {
-                    "description": "Example create booklist Atomic Habits",
-                    "value": {
-                      "name": "Atomic Habits",
-                      "priority": 3,
-                      "genre": ["Self Development", "Habits"]
-                    }
+                    "$ref": "#/components/examples/Atomic Habits"
                   },
                   "Filosofi Teras": {
-                    "description": "Example create booklist Filosofi Teras",
-                    "value": {
-                      "name": "Filosofi Teras",
-                      "priority": 5,
-                      "genre": ["Self Development", "Filosofi"]
-                    }
+                    "$ref": "#/components/examples/Filosofi Teras"
                   }
                 }
               }
@@ -235,74 +154,20 @@
         "tags": ["Booklist"],
         "summary": "Update existing booklist",
         "description": "Update existing booklist in database",
-        "parameters": [
-          {
-            "name": "booklistId",
-            "in": "path",
-            "required": true,
-            "description": "Booklist id for update",
-            "schema": {
-              "type": "string",
-              "minLength": 1,
-              "maxLength": 100
-            },
-            "examples": {
-              "Atomic Habits": {
-                "description": "Sample booklist id for Atomic Habits",
-                "value": "1"
-              },
-              "Filosofi Teras": {
-                "description": "Sample booklist id for Filosofi Teras",
-                "value": "2"
-              }
-            }
-          }
-        ],
+        "parameters": [{ "$ref": "#/components/parameters/BooklistId" }],
         "requestBody": {
           "required": true,
           "content": {
             "application/json": {
               "schema": {
-                "type": "object",
-                "properties": {
-                  "name": {
-                    "type": "string",
-                    "minLength": 1,
-                    "required": true
-                  },
-                  "priority": {
-                    "type": "integer",
-                    "format": "int32",
-                    "default": 1,
-                    "required": true
-                  },
-                  "genre": {
-                    "type": "array",
-                    "required": false,
-                    "minItems": 1,
-                    "items": {
-                      "type": "string",
-                      "minLength": 1
-                    }
-                  }
-                }
+                "$ref": "#/components/schemas/CreateOrUpdateBooklist"
               },
               "examples": {
                 "Atomic Habits": {
-                  "description": "Example create booklist Atomic Habits",
-                  "value": {
-                    "name": "Atomic Habits",
-                    "priority": 3,
-                    "genre": ["Pengembangan Diri", "Habits"]
-                  }
+                  "$ref": "#/components/examples/Atomic Habits"
                 },
                 "Filosofi Teras": {
-                  "description": "Example create booklist Filosofi Teras",
-                  "value": {
-                    "name": "Filosofi Teras",
-                    "priority": 2,
-                    "genre": ["Pengembangan Diri", "Filosofi"]
-                  }
+                  "$ref": "#/components/examples/Filosofi Teras"
                 }
               }
             }
@@ -314,42 +179,14 @@
             "content": {
               "application/json": {
                 "schema": {
-                  "type": "object",
-                  "properties": {
-                    "id": {
-                      "type": "string"
-                    },
-                    "name": {
-                      "type": "string"
-                    },
-                    "priority": {
-                      "type": "number",
-                      "format": "int32"
-                    },
-                    "tags": {
-                      "type": "array",
-                      "items": {
-                        "type": "string"
-                      }
-                    }
-                  }
+                  "$ref": "#/components/schemas/Booklist"
                 },
                 "examples": {
                   "Atomic Habits": {
-                    "description": "Example update booklist Atomic Habits",
-                    "value": {
-                      "name": "Atomic Habits",
-                      "priority": 3,
-                      "genre": ["Self Development", "Habits"]
-                    }
+                    "$ref": "#/components/examples/Atomic Habits"
                   },
                   "Filosofi Teras": {
-                    "description": "Example update booklist Filosofi Teras",
-                    "value": {
-                      "name": "Filosofi Teras",
-                      "priority": 5,
-                      "genre": ["Self Development", "Filosofi"]
-                    }
+                    "$ref": "#/components/examples/Filosofi Teras"
                   }
                 }
               }
@@ -361,19 +198,7 @@
         "tags": ["Booklist"],
         "summary": "Delete existing booklist",
         "description": "Delete existing booklist in database",
-        "parameters": [
-          {
-            "name": "booklistId",
-            "in": "path",
-            "required": true,
-            "description": "Booklist id for deteled",
-            "schema": {
-              "type": "string",
-              "minLength": 1,
-              "maxLength": 100
-            }
-          }
-        ],
+        "parameters": [{ "$ref": "#/components/parameters/BooklistId" }],
         "responses": {
           "200": {
             "description": "Success delete booklist",
@@ -499,25 +324,25 @@
       "ArrayBooklist": {
         "type": "array",
         "items": {
-          "type": "object",
-          "properties": {
-            "id": {
-              "type": "string"
-            },
-            "name": {
-              "type": "string"
-            },
-            "priority": {
-              "type": "number",
-              "format": "int32"
-            },
-            "tags": {
-              "type": "array",
-              "items": {
-                "type": "string"
-              }
-            }
-          }
+          "$ref": "#/components/schemas/Booklist"
+        }
+      }
+    },
+    "examples": {
+      "Atomic Habits": {
+        "description": "Example create booklist Atomic Habits",
+        "value": {
+          "name": "Atomic Habits",
+          "priority": 3,
+          "genre": ["Self Development", "Habits"]
+        }
+      },
+      "Filosofi Teras": {
+        "description": "Example create booklist Filosofi Teras",
+        "value": {
+          "name": "Filosofi Teras",
+          "priority": 5,
+          "genre": ["Self Development", "Filosofi"]
         }
       }
     }
