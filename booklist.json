@@ -35,6 +35,7 @@
   "paths": {
     "/booklist": {
       "get": {
+        "tags": ["Booklist"],
         "summary": "Get all booklist",
         "description": "Get all incompleted booklist by default",
         "parameters": [
@@ -132,6 +133,7 @@
         }
       },
       "post": {
+        "tags": ["Booklist"],
         "summary": "Create new booklist",
         "description": "Create new booklist to database",
         "requestBody": {
@@ -249,6 +251,7 @@
     },
     "/booklist/{booklistId}": {
       "put": {
+        "tags": ["Booklist"],
         "summary": "Update existing booklist",
         "description": "Update existing booklist in database",
         "parameters": [
@@ -377,6 +380,7 @@
         }
       },
       "delete": {
+        "tags": ["Booklist"],
         "summary": "Delete existing booklist",
         "description": "Delete existing booklist in database",
         "parameters": [
