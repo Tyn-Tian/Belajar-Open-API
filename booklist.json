@@ -110,19 +110,13 @@
                         "id": "1",
                         "name": "Atomic Habits",
                         "priority": 3,
-                        "genre": [
-                          "Self Development",
-                          "Habits"
-                        ]
+                        "genre": ["Self Development", "Habits"]
                       },
                       {
                         "id": "2",
                         "name": "Filosofi Teras",
                         "priority": 5,
-                        "genre": [
-                          "Self Development",
-                          "Filosofi"
-                        ]
+                        "genre": ["Self Development", "Filosofi"]
                       }
                     ]
                   }
@@ -171,9 +165,7 @@
                   "value": {
                     "name": "Atomic Habits",
                     "priority": 3,
-                    "genre": [
-                      "Pengembangan Diri", "Habits"
-                    ]
+                    "genre": ["Pengembangan Diri", "Habits"]
                   }
                 },
                 "Filosofi Teras": {
@@ -181,9 +173,7 @@
                   "value": {
                     "name": "Filosofi Teras",
                     "priority": 2,
-                    "genre": [
-                      "Pengembangan Diri", "Filosofi"
-                    ]
+                    "genre": ["Pengembangan Diri", "Filosofi"]
                   }
                 }
               }
@@ -196,25 +186,22 @@
             "content": {
               "application/json": {
                 "schema": {
-                  "type": "array",
-                  "items": {
-                    "type": "object",
-                    "properties": {
-                      "id": {
+                  "type": "object",
+                  "properties": {
+                    "id": {
+                      "type": "string"
+                    },
+                    "name": {
+                      "type": "string"
+                    },
+                    "priority": {
+                      "type": "number",
+                      "format": "int32"
+                    },
+                    "tags": {
+                      "type": "array",
+                      "items": {
                         "type": "string"
-                      },
-                      "name": {
-                        "type": "string"
-                      },
-                      "priority": {
-                        "type": "number",
-                        "format": "int32"
-                      },
-                      "tags": {
-                        "type": "array",
-                        "items": {
-                          "type": "string"
-                        }
                       }
                     }
                   }
@@ -225,10 +212,7 @@
                     "value": {
                       "name": "Atomic Habits",
                       "priority": 3,
-                      "genre": [
-                        "Self Development",
-                        "Habits"
-                      ]
+                      "genre": ["Self Development", "Habits"]
                     }
                   },
                   "Filosofi Teras": {
@@ -236,10 +220,7 @@
                     "value": {
                       "name": "Filosofi Teras",
                       "priority": 5,
-                      "genre": [
-                        "Self Development",
-                        "Filosofi"
-                      ]
+                      "genre": ["Self Development", "Filosofi"]
                     }
                   }
                 }
@@ -264,6 +245,16 @@
               "type": "string",
               "minLength": 1,
               "maxLength": 100
+            },
+            "examples": {
+              "Atomic Habits": {
+                "description": "Sample booklist id for Atomic Habits",
+                "value": "1"
+              },
+              "Filosofi Teras": {
+                "description": "Sample booklist id for Filosofi Teras",
+                "value": "2"
+              }
             }
           }
         ],
@@ -302,9 +293,7 @@
                   "value": {
                     "name": "Atomic Habits",
                     "priority": 3,
-                    "genre": [
-                      "Pengembangan Diri", "Habits"
-                    ]
+                    "genre": ["Pengembangan Diri", "Habits"]
                   }
                 },
                 "Filosofi Teras": {
@@ -312,9 +301,7 @@
                   "value": {
                     "name": "Filosofi Teras",
                     "priority": 2,
-                    "genre": [
-                      "Pengembangan Diri", "Filosofi"
-                    ]
+                    "genre": ["Pengembangan Diri", "Filosofi"]
                   }
                 }
               }
@@ -327,25 +314,22 @@
             "content": {
               "application/json": {
                 "schema": {
-                  "type": "array",
-                  "items": {
-                    "type": "object",
-                    "properties": {
-                      "id": {
+                  "type": "object",
+                  "properties": {
+                    "id": {
+                      "type": "string"
+                    },
+                    "name": {
+                      "type": "string"
+                    },
+                    "priority": {
+                      "type": "number",
+                      "format": "int32"
+                    },
+                    "tags": {
+                      "type": "array",
+                      "items": {
                         "type": "string"
-                      },
-                      "name": {
-                        "type": "string"
-                      },
-                      "priority": {
-                        "type": "number",
-                        "format": "int32"
-                      },
-                      "tags": {
-                        "type": "array",
-                        "items": {
-                          "type": "string"
-                        }
                       }
                     }
                   }
@@ -356,10 +340,7 @@
                     "value": {
                       "name": "Atomic Habits",
                       "priority": 3,
-                      "genre": [
-                        "Self Development",
-                        "Habits"
-                      ]
+                      "genre": ["Self Development", "Habits"]
                     }
                   },
                   "Filosofi Teras": {
@@ -367,10 +348,7 @@
                     "value": {
                       "name": "Filosofi Teras",
                       "priority": 5,
-                      "genre": [
-                        "Self Development",
-                        "Filosofi"
-                      ]
+                      "genre": ["Self Development", "Filosofi"]
                     }
                   }
                 }
@@ -440,6 +418,103 @@
                     }
                   }
                 }
+              }
+            }
+          }
+        }
+      }
+    }
+  },
+  "components": {
+    "parameters": {
+      "BooklistId": {
+        "name": "booklistId",
+        "in": "path",
+        "required": true,
+        "description": "Booklist id for update",
+        "schema": {
+          "type": "string",
+          "minLength": 1,
+          "maxLength": 100
+        },
+        "examples": {
+          "Atomic Habits": {
+            "description": "Sample booklist id for Atomic Habits",
+            "value": "1"
+          },
+          "Filosofi Teras": {
+            "description": "Sample booklist id for Filosofi Teras",
+            "value": "2"
+          }
+        }
+      }
+    },
+    "schemas": {
+      "Booklist": {
+        "type": "object",
+        "properties": {
+          "id": {
+            "type": "string"
+          },
+          "name": {
+            "type": "string"
+          },
+          "priority": {
+            "type": "number",
+            "format": "int32"
+          },
+          "tags": {
+            "type": "array",
+            "items": {
+              "type": "string"
+            }
+          }
+        }
+      },
+      "CreateOrUpdateBooklist": {
+        "type": "object",
+        "properties": {
+          "name": {
+            "type": "string",
+            "minLength": 1,
+            "required": true
+          },
+          "priority": {
+            "type": "integer",
+            "format": "int32",
+            "default": 1,
+            "required": true
+          },
+          "genre": {
+            "type": "array",
+            "required": false,
+            "minItems": 1,
+            "items": {
+              "type": "string",
+              "minLength": 1
+            }
+          }
+        }
+      },
+      "ArrayBooklist": {
+        "type": "array",
+        "items": {
+          "type": "object",
+          "properties": {
+            "id": {
+              "type": "string"
+            },
+            "name": {
+              "type": "string"
+            },
+            "priority": {
+              "type": "number",
+              "format": "int32"
+            },
+            "tags": {
+              "type": "array",
+              "items": {
+                "type": "string"
               }
             }
           }
