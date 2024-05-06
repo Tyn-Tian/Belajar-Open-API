@@ -72,7 +72,64 @@
             }
           }
         ],
-        "responses": {}
+        "responses": {
+          "200": {
+            "description": "Success get all booklist",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "array",
+                  "items": {
+                    "type": "object",
+                    "properties": {
+                      "id": {
+                        "type": "string"
+                      },
+                      "name": {
+                        "type": "string"
+                      },
+                      "priority": {
+                        "type": "number",
+                        "format": "int32"
+                      },
+                      "tags": {
+                        "type": "array",
+                        "items": {
+                          "type": "string"
+                        }
+                      }
+                    }
+                  }
+                },
+                "examples": {
+                  "success": {
+                    "description": "Example success get all booklist",
+                    "value": [
+                      {
+                        "id": "1",
+                        "name": "Atomic Habits",
+                        "priority": 3,
+                        "genre": [
+                          "Self Development",
+                          "Habits"
+                        ]
+                      },
+                      {
+                        "id": "2",
+                        "name": "Filosofi Teras",
+                        "priority": 5,
+                        "genre": [
+                          "Self Development",
+                          "Filosofi"
+                        ]
+                      }
+                    ]
+                  }
+                }
+              }
+            }
+          }
+        }
       },
       "post": {
         "summary": "Create new booklist",
@@ -131,7 +188,63 @@
             }
           }
         },
-        "responses": {}
+        "responses": {
+          "200": {
+            "description": "Success create booklist",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "array",
+                  "items": {
+                    "type": "object",
+                    "properties": {
+                      "id": {
+                        "type": "string"
+                      },
+                      "name": {
+                        "type": "string"
+                      },
+                      "priority": {
+                        "type": "number",
+                        "format": "int32"
+                      },
+                      "tags": {
+                        "type": "array",
+                        "items": {
+                          "type": "string"
+                        }
+                      }
+                    }
+                  }
+                },
+                "examples": {
+                  "Atomic Habits": {
+                    "description": "Example create booklist Atomic Habits",
+                    "value": {
+                      "name": "Atomic Habits",
+                      "priority": 3,
+                      "genre": [
+                        "Self Development",
+                        "Habits"
+                      ]
+                    }
+                  },
+                  "Filosofi Teras": {
+                    "description": "Example create booklist Filosofi Teras",
+                    "value": {
+                      "name": "Filosofi Teras",
+                      "priority": 5,
+                      "genre": [
+                        "Self Development",
+                        "Filosofi"
+                      ]
+                    }
+                  }
+                }
+              }
+            }
+          }
+        }
       }
     },
     "/booklist/{booklistId}": {
@@ -205,7 +318,63 @@
             }
           }
         },
-        "responses": {}
+        "responses": {
+          "200": {
+            "description": "Success update booklist",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "array",
+                  "items": {
+                    "type": "object",
+                    "properties": {
+                      "id": {
+                        "type": "string"
+                      },
+                      "name": {
+                        "type": "string"
+                      },
+                      "priority": {
+                        "type": "number",
+                        "format": "int32"
+                      },
+                      "tags": {
+                        "type": "array",
+                        "items": {
+                          "type": "string"
+                        }
+                      }
+                    }
+                  }
+                },
+                "examples": {
+                  "Atomic Habits": {
+                    "description": "Example update booklist Atomic Habits",
+                    "value": {
+                      "name": "Atomic Habits",
+                      "priority": 3,
+                      "genre": [
+                        "Self Development",
+                        "Habits"
+                      ]
+                    }
+                  },
+                  "Filosofi Teras": {
+                    "description": "Example update booklist Filosofi Teras",
+                    "value": {
+                      "name": "Filosofi Teras",
+                      "priority": 5,
+                      "genre": [
+                        "Self Development",
+                        "Filosofi"
+                      ]
+                    }
+                  }
+                }
+              }
+            }
+          }
+        }
       },
       "delete": {
         "summary": "Delete existing booklist",
@@ -223,7 +392,54 @@
             }
           }
         ],
-        "responses": {}
+        "responses": {
+          "200": {
+            "description": "Success delete booklist",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "properties": {
+                    "success": {
+                      "type": "boolean"
+                    }
+                  }
+                },
+                "examples": {
+                  "success": {
+                    "description": "Success delete booklist",
+                    "value": {
+                      "success": true
+                    }
+                  }
+                }
+              }
+            }
+          },
+          "404": {
+            "description": "Failed delete booklist",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "properties": {
+                    "success": {
+                      "type": "boolean"
+                    }
+                  }
+                },
+                "examples": {
+                  "success": {
+                    "description": "Failed delete booklist",
+                    "value": {
+                      "success": false
+                    }
+                  }
+                }
+              }
+            }
+          }
+        }
       }
     }
   }
